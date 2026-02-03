@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Limo - Premium Luxury Transportation Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #FDB913;
+            --dark-bg: #000000;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-gray: #666666;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Language Bar */
+        .language-bar {
+            background: #1a1a1a;
+            padding: 0.6rem 5%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(253, 185, 19, 0.2);
+        }
+
+        .language-bar span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.4rem 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .lang-btn:hover {
+            background: rgba(253, 185, 19, 0.1);
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-gold);
+            border-color: var(--primary-gold);
+            color: var(--dark-bg);
+            font-weight: 700;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-left a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar-left a:hover {
+            color: var(--primary-gold);
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Main Navigation */
+        .main-nav {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .book-now-btn {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .book-now-btn:hover {
+            background: #e5a810;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(253, 185, 19, 0.4);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23000000" width="1920" height="1080"/><rect fill="%23222222" x="0" y="0" width="1920" height="1080" opacity="0.5"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(253, 185, 19, 0.1), transparent 60%);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-title {
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .hero-title .gold {
+            color: var(--primary-gold);
+        }
+
+        .hero-features {
+            margin: 2rem 0 3rem;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1.6s ease;
+        }
+
+        .hero-feature i {
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+        }
+
+        .hero-rating {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            animation: fadeInUp 1.8s ease;
+        }
+
+        .stars {
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+        }
+
+        .rating-text {
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            animation: fadeInUp 2s ease;
+        }
+
+        .hero-btn-primary {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-btn-primary:hover {
+            background: #e5a810;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(253, 185, 19, 0.4);
+        }
+
+        .hero-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: 2px solid var(--white);
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-btn-secondary:hover {
+            background: var(--white);
+            color: var(--dark-bg);
+        }
+
+        .play-button {
+            position: absolute;
+            right: 10%;
+            bottom: 10%;
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .play-button i {
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: rgba(253, 185, 19, 0.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(253, 185, 19, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(253, 185, 19, 0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i {
+            color: var(--primary-gold);
+            font-size: 2rem;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 5%;
+            background: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--dark-bg);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 1rem;
+        }
+
+        /* Fleet Section */
+        .fleet {
+            padding: 6rem 5%;
+            background: var(--dark-bg);
+            color: var(--white);
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .fleet-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(253, 185, 19, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .fleet-card:hover {
+            background: rgba(253, 185, 19, 0.1);
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+
+        .fleet-image {
+            font-size: 4rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .fleet-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .fleet-capacity {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 6rem 5%;
+            background: var(--light-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+        }
+
+        .author-info h4 {
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact/CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--dark-bg), #1a1a1a);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 1.3rem 3.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #e5a810;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(253, 185, 19, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .cta-title {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .play-button {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .fleet-grid,
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Bar -->
+    <div class="language-bar">
+        <span><i class="fas fa-globe"></i> Language:</span>
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="ja">日本語</button>
+            <button class="lang-btn" data-lang="es">Español</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="tel:5551234567">
+                <i class="fas fa-phone"></i>
+                (555) 123-4567
+            </a>
+            <a href="mailto:info@luxurylimo.com">
+                <i class="fas fa-envelope"></i>
+                info@luxurylimo.com
+            </a>
+        </div>
+        <div class="top-bar-right">
+            <span data-translate="service-available"><i class="far fa-clock"></i> 24/7 Service Available</span>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">ELITE<span>LIMO</span></a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" data-translate="nav-home">Home</a></li>
+                <li><a href="#services" data-translate="nav-services">Services</a></li>
+                <li><a href="#fleet" data-translate="nav-fleet">Fleet</a></li>
+                <li><a href="#about" data-translate="nav-about">About</a></li>
+                <li><a href="#reviews" data-translate="nav-reviews">Reviews</a></li>
+                <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <button class="book-now-btn" onclick="location.href='#contact'" data-translate="book-now">Book Now</button>
+            <button class="mobile-menu-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge" data-translate="hero-badge">PREMIER LUXURY TRANSPORTATION</div>
+            <h1 class="hero-title"><span data-translate="hero-title-1">FIRST CLASS</span><br><span class="gold" data-translate="hero-title-2">SERVICE</span></h1>
+            
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-translate="hero-feature-1">Luxury & Comfort</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-translate="hero-feature-2">Reliability & Punctuality</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-translate="hero-feature-3">Private & Personalized Service</span>
+                </div>
+            </div>
+
+            <div class="hero-rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-text" data-translate="hero-rating">150+ Five-Star Reviews</span>
+            </div>
+
+            <div class="hero-buttons">
+                <button class="hero-btn-primary" onclick="location.href=\'#contact\'" data-translate="hero-btn-1">BOOK NOW</button>
+                <button class="hero-btn-secondary" onclick="location.href=\'#fleet\'" data-translate="hero-btn-2">VIEW FLEET</button>
+            </div>
+        </div>
+
+        <div class="play-button">
+            <i class="fas fa-play"></i>
+        </div>
+
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-badge" data-translate="services-badge">Our Services</span>
+            <h2 class="section-title" data-translate="services-title">Premium Transportation Solutions</h2>
+            <p class="section-description" data-translate="services-desc">Experience unparalleled luxury and professionalism with our comprehensive range of transportation services tailored to your every need.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <h3 class="service-title" data-translate="service-1-title">Airport Transfers</h3>
+                <p class="service-description" data-translate="service-1-desc">Seamless airport pickup and drop-off services with professional chauffeurs ensuring timely arrivals and departures for all your travel needs.</p>
+                <a href="#contact" class="service-link">
+                    data-translate="learn-more" data-translate="learn-more">Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="service-title" data-translate="service-2-title">Corporate Travel</h3>
+                <p class="service-description" data-translate="service-2-desc">Executive transportation solutions designed for business professionals, offering discretion, reliability, and ultimate comfort for your corporate journeys.</p>
+                <a href="#contact" class="service-link">
+                    data-translate="learn-more" data-translate="learn-more">Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-ring"></i>
+                </div>
+                <h3 class="service-title" data-translate="service-3-title">Wedding Services</h3>
+                <p class="service-description" data-translate="service-3-desc">Make your special day unforgettable with our elegant wedding transportation, featuring luxury vehicles and meticulous attention to every detail.</p>
+                <a href="#contact" class="service-link">
+                    data-translate="learn-more" data-translate="learn-more">Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3 class="service-title" data-translate="service-4-title">Special Events</h3>
+                <p class="service-description" data-translate="service-4-desc">Elevate any occasion with our premium event transportation services, perfect for galas, concerts, sporting events, and celebrations.</p>
+                <a href="#contact" class="service-link">
+                    data-translate="learn-more" data-translate="learn-more">Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="service-title" data-translate="service-5-title">Hourly Charters</h3>
+                <p class="service-description" data-translate="service-5-desc">Flexible hourly rental options with dedicated chauffeur service, ideal for city tours, shopping excursions, or multi-stop business meetings.</p>
+                <a href="#contact" class="service-link">
+                    data-translate="learn-more" data-translate="learn-more">Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <h3 class="service-title" data-translate="service-6-title">Point to Point</h3>
+                <p class="service-description" data-translate="service-6-desc">Direct, efficient transportation from your pickup location to destination with our luxury fleet and professional chauffeur service.</p>
+                <a href="#contact" class="service-link">
+                    data-translate="learn-more" data-translate="learn-more">Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="fleet" id="fleet">
+        <div class="section-header">
+            <span class="section-badge" style="background: var(--primary-gold); color: var(--dark-bg);" data-translate="fleet-badge">Our Fleet</span>
+            <h2 class="section-title" style="color: var(--white);" data-translate="fleet-title">Luxury Vehicles</h2>
+            <p class="section-description" style="color: rgba(255,255,255,0.7);" data-translate="fleet-desc">Our meticulously maintained fleet offers the perfect vehicle for every occasion, combining elegance, comfort, and cutting-edge technology.</p>
+        </div>
+
+        <div class="fleet-grid">
+            <div class="fleet-card">
+                <div class="fleet-image">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3 class="fleet-name" data-translate="fleet-1-name">Executive Sedans</h3>
+                <p class="fleet-capacity" data-translate="fleet-1-cap">Up to 3 Passengers | Premium Comfort</p>
+            </div>
+
+            <div class="fleet-card">
+                <div class="fleet-image">
+                    <i class="fas fa-car-side"></i>
+                </div>
+                <h3 class="fleet-name" data-translate="fleet-2-name">Luxury SUVs</h3>
+                <p class="fleet-capacity" data-translate="fleet-2-cap">Up to 6 Passengers | Spacious Elegance</p>
+            </div>
+
+            <div class="fleet-card">
+                <div class="fleet-image">
+                    <i class="fas fa-shuttle-van"></i>
+                </div>
+                <h3 class="fleet-name" data-translate="fleet-3-name">Executive Vans</h3>
+                <p class="fleet-capacity" data-translate="fleet-3-cap">Up to 14 Passengers | Group Travel</p>
+            </div>
+
+            <div class="fleet-card">
+                <div class="fleet-image">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <h3 class="fleet-name" data-translate="fleet-4-name">Luxury Coaches</h3>
+                <p class="fleet-capacity" data-translate="fleet-4-cap">Up to 28 Passengers | Large Events</p>
+            </div>
+
+            <div class="fleet-card">
+                <div class="fleet-image">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3 class="fleet-name" data-translate="fleet-5-name">Stretch Limousines</h3>
+                <p class="fleet-capacity" data-translate="fleet-5-cap">Up to 10 Passengers | Ultimate Luxury</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="about">
+        <div class="section-header">
+            <span class="section-badge" data-translate="why-badge">Why Choose Us</span>
+            <h2 class="section-title" data-translate="why-title">The Elite Difference</h2>
+            <p class="section-description" data-translate="why-desc">Discover what sets us apart as the premier choice for luxury transportation services in the region.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-number">01</div>
+                <h3 class="feature-title" data-translate="feature-1-title">Professional Chauffeurs</h3>
+                <p class="feature-description" data-translate="feature-1-desc">Our extensively trained, licensed chauffeurs provide exceptional service with deep local knowledge and unwavering professionalism.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-number">02</div>
+                <h3 class="feature-title" data-translate="feature-2-title">Premium Fleet</h3>
+                <p class="feature-description" data-translate="feature-2-desc">Immaculately maintained luxury vehicles equipped with state-of-the-art amenities and advanced safety features.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-number">03</div>
+                <h3 class="feature-title" data-translate="feature-3-title">24/7 Availability</h3>
+                <p class="feature-description" data-translate="feature-3-desc">Round-the-clock service ensures we're ready whenever you need us, day or night, any day of the year.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-number">04</div>
+                <h3 class="feature-title" data-translate="feature-4-title">Punctual Service</h3>
+                <p class="feature-description" data-translate="feature-4-desc">Advanced flight tracking and route optimization guarantee on-time arrivals and departures without exception.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-number">05</div>
+                <h3 class="feature-title" data-translate="feature-5-title">Personalized Experience</h3>
+                <p class="feature-description" data-translate="feature-5-desc">Tailored service to meet your specific preferences, from temperature settings to refreshment choices and music selection.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-number">06</div>
+                <h3 class="feature-title" data-translate="feature-6-title">Transparent Pricing</h3>
+                <p class="feature-description" data-translate="feature-6-desc">Clear, upfront pricing with no hidden fees, ensuring you always know exactly what to expect.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="reviews">
+        <div class="section-header">
+            <span class="section-badge" data-translate="testimonials-badge">Testimonials</span>
+            <h2 class="section-title" data-translate="testimonials-title">What Our Clients Say</h2>
+            <p class="section-description" data-translate="testimonials-desc">Read firsthand experiences from our satisfied clients who've enjoyed our premium transportation services.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text" data-translate="testimonial-1">"Absolutely exceptional service! The chauffeur was prompt, professional, and the vehicle was immaculate. This is now my go-to transportation service for all business travel."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <h4 data-translate="testimonial-1-name">James Davidson</h4>
+                        <p data-translate="testimonial-1-title">Corporate Executive</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text" data-translate="testimonial-2">"Made our wedding day perfect! The limousine was stunning and the driver went above and beyond to make sure everything ran smoothly. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4 data-translate="testimonial-2-name">Sarah Mitchell</h4>
+                        <p data-translate="testimonial-2-title">Wedding Client</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text" data-translate="testimonial-3">"Outstanding reliability and comfort. I've used their airport service multiple times and it's always been flawless. The attention to detail is remarkable."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RC</div>
+                    <div class="author-info">
+                        <h4 data-translate="testimonial-3-name">Robert Chen</h4>
+                        <p data-translate="testimonial-3-title">Frequent Traveler</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2 class="cta-title" data-translate="cta-title">Ready to Experience Luxury?</h2>
+            <p class="cta-description" data-translate="cta-desc">Book your premium transportation service today and discover why discerning clients choose Elite Limo for all their travel needs. Available 24/7 for your convenience.</p>
+            <button class="cta-button" data-translate="cta-button">BOOK YOUR RIDE NOW</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ELITE<span style="color: var(--primary-gold);">LIMO</span></h3>
+                <p data-translate="footer-desc">Setting the standard for luxury ground transportation through exceptional service, unwavering professionalism, and an uncompromising commitment to excellence.</p>
+                <div class="social-icons" style="margin-top: 1.5rem;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-translate="footer-quick">Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#fleet">Our Fleet</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-translate="footer-services">Services</h3>
+                <ul>
+                    <li><a href="#services">Airport Transfers</a></li>
+                    <li><a href="#services">Corporate Travel</a></li>
+                    <li><a href="#services">Wedding Services</a></li>
+                    <li><a href="#services">Special Events</a></li>
+                    <li><a href="#services">Hourly Charters</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-translate="footer-contact">Contact</h3>
+                <ul>
+                    <li><a href="tel:5551234567">(555) 123-4567</a></li>
+                    <li><a href="mailto:info@luxurylimo.com">info@luxurylimo.com</a></li>
+                    <li>24/7 Service Available</li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-translate="footer-copyright">&copy; 2024 Elite Limo. All rights reserved. | Redefining luxury transportation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Translation data
+        const translations = {
+            en: {
+                // Top Bar
+                'service-available': '24/7 Service Available',
+                
+                // Navigation
+                'nav-home': 'Home',
+                'nav-services': 'Services',
+                'nav-fleet': 'Fleet',
+                'nav-about': 'About',
+                'nav-reviews': 'Reviews',
+                'nav-contact': 'Contact',
+                'book-now': 'Book Now',
+                
+                // Hero
+                'hero-badge': 'PREMIER LUXURY TRANSPORTATION',
+                'hero-title-1': 'FIRST CLASS',
+                'hero-title-2': 'SERVICE',
+                'hero-feature-1': 'Luxury & Comfort',
+                'hero-feature-2': 'Reliability & Punctuality',
+                'hero-feature-3': 'Private & Personalized Service',
+                'hero-rating': '150+ Five-Star Reviews',
+                'hero-btn-1': 'BOOK NOW',
+                'hero-btn-2': 'VIEW FLEET',
+                
+                // Services Section
+                'services-badge': 'Our Services',
+                'services-title': 'Premium Transportation Solutions',
+                'services-desc': 'Experience unparalleled luxury and professionalism with our comprehensive range of transportation services tailored to your every need.',
+                
+                'service-1-title': 'Airport Transfers',
+                'service-1-desc': 'Seamless airport pickup and drop-off services with professional chauffeurs ensuring timely arrivals and departures for all your travel needs.',
+                
+                'service-2-title': 'Corporate Travel',
+                'service-2-desc': 'Executive transportation solutions designed for business professionals, offering discretion, reliability, and ultimate comfort for your corporate journeys.',
+                
+                'service-3-title': 'Wedding Services',
+                'service-3-desc': 'Make your special day unforgettable with our elegant wedding transportation, featuring luxury vehicles and meticulous attention to every detail.',
+                
+                'service-4-title': 'Special Events',
+                'service-4-desc': 'Elevate any occasion with our premium event transportation services, perfect for galas, concerts, sporting events, and celebrations.',
+                
+                'service-5-title': 'Hourly Charters',
+                'service-5-desc': 'Flexible hourly rental options with dedicated chauffeur service, ideal for city tours, shopping excursions, or multi-stop business meetings.',
+                
+                'service-6-title': 'Point to Point',
+                'service-6-desc': 'Direct, efficient transportation from your pickup location to destination with our luxury fleet and professional chauffeur service.',
+                
+                'learn-more': 'Learn More',
+                
+                // Fleet Section
+                'fleet-badge': 'Our Fleet',
+                'fleet-title': 'Luxury Vehicles',
+                'fleet-desc': 'Our meticulously maintained fleet offers the perfect vehicle for every occasion, combining elegance, comfort, and cutting-edge technology.',
+                
+                'fleet-1-name': 'Executive Sedans',
+                'fleet-1-cap': 'Up to 3 Passengers | Premium Comfort',
+                
+                'fleet-2-name': 'Luxury SUVs',
+                'fleet-2-cap': 'Up to 6 Passengers | Spacious Elegance',
+                
+                'fleet-3-name': 'Executive Vans',
+                'fleet-3-cap': 'Up to 14 Passengers | Group Travel',
+                
+                'fleet-4-name': 'Luxury Coaches',
+                'fleet-4-cap': 'Up to 28 Passengers | Large Events',
+                
+                'fleet-5-name': 'Stretch Limousines',
+                'fleet-5-cap': 'Up to 10 Passengers | Ultimate Luxury',
+                
+                // Why Choose Us
+                'why-badge': 'Why Choose Us',
+                'why-title': 'The Elite Difference',
+                'why-desc': 'Discover what sets us apart as the premier choice for luxury transportation services in the region.',
+                
+                'feature-1-title': 'Professional Chauffeurs',
+                'feature-1-desc': 'Our extensively trained, licensed chauffeurs provide exceptional service with deep local knowledge and unwavering professionalism.',
+                
+                'feature-2-title': 'Premium Fleet',
+                'feature-2-desc': 'Immaculately maintained luxury vehicles equipped with state-of-the-art amenities and advanced safety features.',
+                
+                'feature-3-title': '24/7 Availability',
+                'feature-3-desc': 'Round-the-clock service ensures we\'re ready whenever you need us, day or night, any day of the year.',
+                
+                'feature-4-title': 'Punctual Service',
+                'feature-4-desc': 'Advanced flight tracking and route optimization guarantee on-time arrivals and departures without exception.',
+                
+                'feature-5-title': 'Personalized Experience',
+                'feature-5-desc': 'Tailored service to meet your specific preferences, from temperature settings to refreshment choices and music selection.',
+                
+                'feature-6-title': 'Transparent Pricing',
+                'feature-6-desc': 'Clear, upfront pricing with no hidden fees, ensuring you always know exactly what to expect.',
+                
+                // Testimonials
+                'testimonials-badge': 'Testimonials',
+                'testimonials-title': 'What Our Clients Say',
+                'testimonials-desc': 'Read firsthand experiences from our satisfied clients who\'ve enjoyed our premium transportation services.',
+                
+                'testimonial-1': 'Absolutely exceptional service! The chauffeur was prompt, professional, and the vehicle was immaculate. This is now my go-to transportation service for all business travel.',
+                'testimonial-1-name': 'James Davidson',
+                'testimonial-1-title': 'Corporate Executive',
+                
+                'testimonial-2': 'Made our wedding day perfect! The limousine was stunning and the driver went above and beyond to make sure everything ran smoothly. Highly recommend!',
+                'testimonial-2-name': 'Sarah Mitchell',
+                'testimonial-2-title': 'Wedding Client',
+                
+                'testimonial-3': 'Outstanding reliability and comfort. I\'ve used their airport service multiple times and it\'s always been flawless. The attention to detail is remarkable.',
+                'testimonial-3-name': 'Robert Chen',
+                'testimonial-3-title': 'Frequent Traveler',
+                
+                // CTA
+                'cta-title': 'Ready to Experience Luxury?',
+                'cta-desc': 'Book your premium transportation service today and discover why discerning clients choose Elite Limo for all their travel needs. Available 24/7 for your convenience.',
+                'cta-button': 'BOOK YOUR RIDE NOW',
+                
+                // Footer
+                'footer-desc': 'Setting the standard for luxury ground transportation through exceptional service, unwavering professionalism, and an uncompromising commitment to excellence.',
+                'footer-quick': 'Quick Links',
+                'footer-services': 'Services',
+                'footer-contact': 'Contact',
+                'footer-copyright': '© 2024 Elite Limo. All rights reserved. | Redefining luxury transportation.',
+            },
+            
+            ja: {
+                // Top Bar
+                'service-available': '24時間年中無休',
+                
+                // Navigation
+                'nav-home': 'ホーム',
+                'nav-services': 'サービス',
+                'nav-fleet': '車両',
+                'nav-about': '会社概要',
+                'nav-reviews': 'レビュー',
+                'nav-contact': 'お問い合わせ',
+                'book-now': '今すぐ予約',
+                
+                // Hero
+                'hero-badge': 'プレミアム高級輸送サービス',
+                'hero-title-1': 'ファーストクラス',
+                'hero-title-2': 'サービス',
+                'hero-feature-1': '豪華さと快適さ',
+                'hero-feature-2': '信頼性と時間厳守',
+                'hero-feature-3': 'プライベートでパーソナライズされたサービス',
+                'hero-rating': '150件以上の5つ星レビュー',
+                'hero-btn-1': '今すぐ予約',
+                'hero-btn-2': '車両を見る',
+                
+                // Services Section
+                'services-badge': '私たちのサービス',
+                'services-title': 'プレミアム輸送ソリューション',
+                'services-desc': 'お客様のあらゆるニーズに合わせた包括的な輸送サービスで、比類のない豪華さとプロフェッショナリズムをご体験ください。',
+                
+                'service-1-title': '空港送迎',
+                'service-1-desc': 'プロのドライバーによるシームレスな空港送迎サービスで、すべての旅行ニーズに対応した時間厳守の到着と出発を保証します。',
+                
+                'service-2-title': '企業向け輸送',
+                'service-2-desc': 'ビジネスプロフェッショナル向けに設計されたエグゼクティブ輸送ソリューション。機密性、信頼性、最高の快適さを提供します。',
+                
+                'service-3-title': 'ウェディングサービス',
+                'service-3-desc': '豪華な車両と細部へのこだわりで、特別な日を忘れられないものにします。',
+                
+                'service-4-title': '特別イベント',
+                'service-4-desc': 'ガラ、コンサート、スポーツイベント、お祝いに最適なプレミアムイベント輸送サービスで、あらゆる機会を格上げします。',
+                
+                'service-5-title': '時間貸しチャーター',
+                'service-5-desc': '専属ドライバーサービス付きの柔軟な時間貸しオプション。市内観光、ショッピング、複数の場所でのビジネスミーティングに最適です。',
+                
+                'service-6-title': 'ポイントツーポイント',
+                'service-6-desc': '高級車両とプロのドライバーサービスで、ピックアップ場所から目的地まで直接効率的な輸送を提供します。',
+                
+                'learn-more': '詳細を見る',
+                
+                // Fleet Section
+                'fleet-badge': '私たちの車両',
+                'fleet-title': '高級車両',
+                'fleet-desc': '細心の注意を払って整備された車両は、エレガンス、快適さ、最先端技術を組み合わせ、あらゆる機会に最適な車両を提供します。',
+                
+                'fleet-1-name': 'エグゼクティブセダン',
+                'fleet-1-cap': '最大3名 | プレミアムコンフォート',
+                
+                'fleet-2-name': '高級SUV',
+                'fleet-2-cap': '最大6名 | 広々としたエレガンス',
+                
+                'fleet-3-name': 'エグゼクティブバン',
+                'fleet-3-cap': '最大14名 | グループ旅行',
+                
+                'fleet-4-name': '高級コーチ',
+                'fleet-4-cap': '最大28名 | 大規模イベント',
+                
+                'fleet-5-name': 'ストレッチリムジン',
+                'fleet-5-cap': '最大10名 | 究極の豪華さ',
+                
+                // Why Choose Us
+                'why-badge': '選ばれる理由',
+                'why-title': 'エリートの違い',
+                'why-desc': '地域のプレミアム輸送サービスの第一選択として私たちを際立たせるものを発見してください。',
+                
+                'feature-1-title': 'プロのドライバー',
+                'feature-1-desc': '広範な訓練を受け、免許を持つドライバーが、深い地域知識と揺るぎないプロフェッショナリズムで卓越したサービスを提供します。',
+                
+                'feature-2-title': 'プレミアム車両',
+                'feature-2-desc': '最先端の設備と高度な安全機能を備えた、完璧に整備された高級車両。',
+                
+                'feature-3-title': '24時間365日対応',
+                'feature-3-desc': '昼夜を問わず、年中無休でいつでもご利用いただけます。',
+                
+                'feature-4-title': '時間厳守のサービス',
+                'feature-4-desc': '高度なフライト追跡とルート最適化により、例外なく時間通りの到着と出発を保証します。',
+                
+                'feature-5-title': 'パーソナライズされた体験',
+                'feature-5-desc': '温度設定からリフレッシュメントの選択、音楽の選択まで、お客様の特定の好みに合わせたサービス。',
+                
+                'feature-6-title': '透明な価格設定',
+                'feature-6-desc': '隠れた料金のない明確で事前の価格設定で、常に何を期待するかを正確に把握できます。',
+                
+                // Testimonials
+                'testimonials-badge': 'お客様の声',
+                'testimonials-title': 'お客様の声',
+                'testimonials-desc': 'プレミアム輸送サービスをご利用いただいた満足したお客様の直接の体験をお読みください。',
+                
+                'testimonial-1': '絶対的に素晴らしいサービス！ドライバーは時間厳守でプロフェッショナル、車両は完璧でした。これが私のビジネス旅行のすべての輸送サービスになりました。',
+                'testimonial-1-name': 'ジェームズ・デビッドソン',
+                'testimonial-1-title': '企業経営者',
+                
+                'testimonial-2': '結婚式の日を完璧にしてくれました！リムジンは見事で、ドライバーはすべてがスムーズに進むように最善を尽くしてくれました。強くお勧めします！',
+                'testimonial-2-name': 'サラ・ミッチェル',
+                'testimonial-2-title': 'ウェディングクライアント',
+                
+                'testimonial-3': '優れた信頼性と快適さ。空港サービスを何度も利用しましたが、常に完璧でした。細部へのこだわりは驚くべきものです。',
+                'testimonial-3-name': 'ロバート・チェン',
+                'testimonial-3-title': '頻繁な旅行者',
+                
+                // CTA
+                'cta-title': '豪華さを体験する準備はできましたか？',
+                'cta-desc': '今日プレミアム輸送サービスを予約して、なぜ目の肥えたクライアントがすべての旅行ニーズにエリートリムジンを選ぶのかを発見してください。24時間年中無休で対応しています。',
+                'cta-button': '今すぐ乗車を予約',
+                
+                // Footer
+                'footer-desc': '卓越したサービス、揺るぎないプロフェッショナリズム、妥協のない卓越性へのコミットメントを通じて、高級地上輸送の基準を設定しています。',
+                'footer-quick': 'クイックリンク',
+                'footer-services': 'サービス',
+                'footer-contact': 'お問い合わせ',
+                'footer-copyright': '© 2024 Elite Limo. 全著作権所有 | 高級輸送を再定義',
+            },
+            
+            es: {
+                // Top Bar
+                'service-available': 'Servicio 24/7 Disponible',
+                
+                // Navigation
+                'nav-home': 'Inicio',
+                'nav-services': 'Servicios',
+                'nav-fleet': 'Flota',
+                'nav-about': 'Acerca de',
+                'nav-reviews': 'Reseñas',
+                'nav-contact': 'Contacto',
+                'book-now': 'Reservar Ahora',
+                
+                // Hero
+                'hero-badge': 'TRANSPORTE DE LUJO PREMIER',
+                'hero-title-1': 'SERVICIO DE',
+                'hero-title-2': 'PRIMERA CLASE',
+                'hero-feature-1': 'Lujo y Comodidad',
+                'hero-feature-2': 'Confiabilidad y Puntualidad',
+                'hero-feature-3': 'Servicio Privado y Personalizado',
+                'hero-rating': 'Más de 150 Reseñas de 5 Estrellas',
+                'hero-btn-1': 'RESERVAR AHORA',
+                'hero-btn-2': 'VER FLOTA',
+                
+                // Services Section
+                'services-badge': 'Nuestros Servicios',
+                'services-title': 'Soluciones de Transporte Premium',
+                'services-desc': 'Experimente un lujo y profesionalismo incomparables con nuestra amplia gama de servicios de transporte adaptados a todas sus necesidades.',
+                
+                'service-1-title': 'Traslados al Aeropuerto',
+                'service-1-desc': 'Servicios de recogida y entrega en aeropuerto sin problemas con choferes profesionales que garantizan llegadas y salidas puntuales para todas sus necesidades de viaje.',
+                
+                'service-2-title': 'Viajes Corporativos',
+                'service-2-desc': 'Soluciones de transporte ejecutivo diseñadas para profesionales de negocios, ofreciendo discreción, confiabilidad y máxima comodidad para sus viajes corporativos.',
+                
+                'service-3-title': 'Servicios de Bodas',
+                'service-3-desc': 'Haga que su día especial sea inolvidable con nuestro elegante transporte de bodas, con vehículos de lujo y atención meticulosa a cada detalle.',
+                
+                'service-4-title': 'Eventos Especiales',
+                'service-4-desc': 'Eleve cualquier ocasión con nuestros servicios de transporte de eventos premium, perfectos para galas, conciertos, eventos deportivos y celebraciones.',
+                
+                'service-5-title': 'Alquileres por Horas',
+                'service-5-desc': 'Opciones de alquiler por horas flexibles con servicio de chofer dedicado, ideales para tours de la ciudad, excursiones de compras o reuniones de negocios de múltiples paradas.',
+                
+                'service-6-title': 'Punto a Punto',
+                'service-6-desc': 'Transporte directo y eficiente desde su ubicación de recogida hasta el destino con nuestra flota de lujo y servicio de chofer profesional.',
+                
+                'learn-more': 'Más Información',
+                
+                // Fleet Section
+                'fleet-badge': 'Nuestra Flota',
+                'fleet-title': 'Vehículos de Lujo',
+                'fleet-desc': 'Nuestra flota meticulosamente mantenida ofrece el vehículo perfecto para cada ocasión, combinando elegancia, comodidad y tecnología de vanguardia.',
+                
+                'fleet-1-name': 'Sedanes Ejecutivos',
+                'fleet-1-cap': 'Hasta 3 Pasajeros | Comodidad Premium',
+                
+                'fleet-2-name': 'SUVs de Lujo',
+                'fleet-2-cap': 'Hasta 6 Pasajeros | Elegancia Espaciosa',
+                
+                'fleet-3-name': 'Vans Ejecutivas',
+                'fleet-3-cap': 'Hasta 14 Pasajeros | Viaje en Grupo',
+                
+                'fleet-4-name': 'Autobuses de Lujo',
+                'fleet-4-cap': 'Hasta 28 Pasajeros | Eventos Grandes',
+                
+                'fleet-5-name': 'Limusinas Alargadas',
+                'fleet-5-cap': 'Hasta 10 Pasajeros | Lujo Máximo',
+                
+                // Why Choose Us
+                'why-badge': 'Por Qué Elegirnos',
+                'why-title': 'La Diferencia Elite',
+                'why-desc': 'Descubra lo que nos distingue como la opción principal para servicios de transporte de lujo en la región.',
+                
+                'feature-1-title': 'Choferes Profesionales',
+                'feature-1-desc': 'Nuestros choferes ampliamente capacitados y licenciados brindan un servicio excepcional con profundo conocimiento local y profesionalismo inquebrantable.',
+                
+                'feature-2-title': 'Flota Premium',
+                'feature-2-desc': 'Vehículos de lujo impecablemente mantenidos equipados con comodidades de última generación y características de seguridad avanzadas.',
+                
+                'feature-3-title': 'Disponibilidad 24/7',
+                'feature-3-desc': 'El servicio las 24 horas garantiza que estemos listos cuando nos necesite, de día o de noche, cualquier día del año.',
+                
+                'feature-4-title': 'Servicio Puntual',
+                'feature-4-desc': 'El seguimiento avanzado de vuelos y la optimización de rutas garantizan llegadas y salidas puntuales sin excepción.',
+                
+                'feature-5-title': 'Experiencia Personalizada',
+                'feature-5-desc': 'Servicio adaptado para satisfacer sus preferencias específicas, desde configuraciones de temperatura hasta opciones de refrigerios y selección de música.',
+                
+                'feature-6-title': 'Precios Transparentes',
+                'feature-6-desc': 'Precios claros y por adelantado sin tarifas ocultas, asegurando que siempre sepa exactamente qué esperar.',
+                
+                // Testimonials
+                'testimonials-badge': 'Testimonios',
+                'testimonials-title': 'Lo Que Dicen Nuestros Clientes',
+                'testimonials-desc': 'Lea experiencias de primera mano de nuestros clientes satisfechos que han disfrutado de nuestros servicios de transporte premium.',
+                
+                'testimonial-1': '¡Servicio absolutamente excepcional! El chofer fue puntual, profesional y el vehículo estaba impecable. Este es ahora mi servicio de transporte preferido para todos los viajes de negocios.',
+                'testimonial-1-name': 'James Davidson',
+                'testimonial-1-title': 'Ejecutivo Corporativo',
+                
+                'testimonial-2': '¡Hizo perfecto nuestro día de boda! La limusina era impresionante y el conductor hizo todo lo posible para asegurarse de que todo saliera bien. ¡Muy recomendable!',
+                'testimonial-2-name': 'Sarah Mitchell',
+                'testimonial-2-title': 'Cliente de Bodas',
+                
+                'testimonial-3': 'Confiabilidad y comodidad sobresalientes. He usado su servicio de aeropuerto varias veces y siempre ha sido impecable. La atención al detalle es notable.',
+                'testimonial-3-name': 'Robert Chen',
+                'testimonial-3-title': 'Viajero Frecuente',
+                
+                // CTA
+                'cta-title': '¿Listo para Experimentar el Lujo?',
+                'cta-desc': 'Reserve su servicio de transporte premium hoy y descubra por qué los clientes exigentes eligen Elite Limo para todas sus necesidades de viaje. Disponible 24/7 para su conveniencia.',
+                'cta-button': 'RESERVE SU VIAJE AHORA',
+                
+                // Footer
+                'footer-desc': 'Estableciendo el estándar para el transporte terrestre de lujo a través de un servicio excepcional, profesionalismo inquebrantable y un compromiso inquebrantable con la excelencia.',
+                'footer-quick': 'Enlaces Rápidos',
+                'footer-services': 'Servicios',
+                'footer-contact': 'Contacto',
+                'footer-copyright': '© 2024 Elite Limo. Todos los derechos reservados. | Redefiniendo el transporte de lujo.',
+            },
+            
+            zh: {
+                // Top Bar
+                'service-available': '24/7全天候服务',
+                
+                // Navigation
+                'nav-home': '首页',
+                'nav-services': '服务',
+                'nav-fleet': '车队',
+                'nav-about': '关于我们',
+                'nav-reviews': '评论',
+                'nav-contact': '联系我们',
+                'book-now': '立即预订',
+                
+                // Hero
+                'hero-badge': '顶级豪华交通服务',
+                'hero-title-1': '头等舱',
+                'hero-title-2': '服务',
+                'hero-feature-1': '豪华与舒适',
+                'hero-feature-2': '可靠性与准时性',
+                'hero-feature-3': '私人定制化服务',
+                'hero-rating': '150+五星好评',
+                'hero-btn-1': '立即预订',
+                'hero-btn-2': '查看车队',
+                
+                // Services Section
+                'services-badge': '我们的服务',
+                'services-title': '高端交通解决方案',
+                'services-desc': '体验无与伦比的豪华和专业，我们全面的交通服务满足您的每一个需求。',
+                
+                'service-1-title': '机场接送',
+                'service-1-desc': '专业司机提供无缝的机场接送服务，确保所有旅行需求的准时到达和出发。',
+                
+                'service-2-title': '企业商务',
+                'service-2-desc': '为商务专业人士设计的高管交通解决方案，提供谨慎、可靠和终极舒适的企业旅程。',
+                
+                'service-3-title': '婚礼服务',
+                'service-3-desc': '通过我们优雅的婚礼交通服务，让您的特殊日子难以忘怀，配备豪华车辆和对每个细节的精心关注。',
+                
+                'service-4-title': '特别活动',
+                'service-4-desc': '通过我们的高端活动交通服务提升任何场合，非常适合晚会、音乐会、体育赛事和庆祝活动。',
+                
+                'service-5-title': '按小时包车',
+                'service-5-desc': '灵活的按小时租赁选项，配备专职司机服务，非常适合城市观光、购物之旅或多站商务会议。',
+                
+                'service-6-title': '点对点',
+                'service-6-desc': '通过我们的豪华车队和专业司机服务，从您的接送地点直接高效地到达目的地。',
+                
+                'learn-more': '了解更多',
+                
+                // Fleet Section
+                'fleet-badge': '我们的车队',
+                'fleet-title': '豪华车辆',
+                'fleet-desc': '我们精心维护的车队为每个场合提供完美的车辆，结合了优雅、舒适和尖端技术。',
+                
+                'fleet-1-name': '高管轿车',
+                'fleet-1-cap': '最多3位乘客 | 高端舒适',
+                
+                'fleet-2-name': '豪华SUV',
+                'fleet-2-cap': '最多6位乘客 | 宽敞优雅',
+                
+                'fleet-3-name': '高管商务车',
+                'fleet-3-cap': '最多14位乘客 | 团体旅行',
+                
+                'fleet-4-name': '豪华巴士',
+                'fleet-4-cap': '最多28位乘客 | 大型活动',
+                
+                'fleet-5-name': '加长礼宾车',
+                'fleet-5-cap': '最多10位乘客 | 终极奢华',
+                
+                // Why Choose Us
+                'why-badge': '选择我们的理由',
+                'why-title': '精英之选',
+                'why-desc': '发现是什么让我们成为该地区豪华交通服务的首选。',
+                
+                'feature-1-title': '专业司机',
+                'feature-1-desc': '我们经过广泛培训的持牌司机凭借深厚的本地知识和坚定的专业精神提供卓越的服务。',
+                
+                'feature-2-title': '高端车队',
+                'feature-2-desc': '配备最先进设施和先进安全功能的精心维护的豪华车辆。',
+                
+                'feature-3-title': '24/7全天候服务',
+                'feature-3-desc': '全天候服务确保我们随时准备就绪，无论白天还是黑夜，一年中的任何一天。',
+                
+                'feature-4-title': '准时服务',
+                'feature-4-desc': '先进的航班跟踪和路线优化保证准时到达和出发，无一例外。',
+                
+                'feature-5-title': '个性化体验',
+                'feature-5-desc': '量身定制的服务满足您的特定偏好，从温度设置到茶点选择和音乐选择。',
+                
+                'feature-6-title': '透明定价',
+                'feature-6-desc': '清晰的预付定价，没有隐藏费用，确保您始终准确知道会发生什么。',
+                
+                // Testimonials
+                'testimonials-badge': '客户评价',
+                'testimonials-title': '客户评价',
+                'testimonials-desc': '阅读我们满意客户的第一手经验，他们享受了我们的高端交通服务。',
+                
+                'testimonial-1': '绝对出色的服务！司机准时、专业，车辆一尘不染。这现在是我所有商务旅行的首选交通服务。',
+                'testimonial-1-name': '詹姆斯·戴维森',
+                'testimonial-1-title': '企业高管',
+                
+                'testimonial-2': '让我们的婚礼日完美无缺！豪华轿车令人惊叹，司机竭尽全力确保一切顺利进行。强烈推荐！',
+                'testimonial-2-name': '莎拉·米切尔',
+                'testimonial-2-title': '婚礼客户',
+                
+                'testimonial-3': '出色的可靠性和舒适性。我多次使用他们的机场服务，每次都完美无缺。对细节的关注令人瞩目。',
+                'testimonial-3-name': '罗伯特·陈',
+                'testimonial-3-title': '频繁旅行者',
+                
+                // CTA
+                'cta-title': '准备好体验奢华了吗？',
+                'cta-desc': '立即预订您的高端交通服务，了解为什么挑剔的客户选择Elite Limo满足所有旅行需求。24/7全天候为您服务。',
+                'cta-button': '立即预订您的行程',
+                
+                // Footer
+                'footer-desc': '通过卓越的服务、坚定的专业精神和对卓越的不懈承诺，树立豪华地面交通的标准。',
+                'footer-quick': '快速链接',
+                'footer-services': '服务',
+                'footer-contact': '联系我们',
+                'footer-copyright': '© 2024 Elite Limo. 版权所有 | 重新定义豪华交通',
+            }
+        };
+
+        // Translation function
+        function translatePage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Store selected language
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        // Initialize translations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            translatePage(savedLang);
+
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    translatePage(lang);
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
