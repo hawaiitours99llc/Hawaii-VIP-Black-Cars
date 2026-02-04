@@ -884,23 +884,42 @@
 
         .booking-card {
             background: var(--white);
-            padding: 2.5rem 1.5rem;
+            padding: 0.75rem;
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
             text-align: center;
             font-weight: 700;
             font-size: 1.15rem;
             color: var(--dark-bg);
             cursor: pointer;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
+            min-height: 360px;
         }
 
         .booking-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+
+        .booking-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .booking-label {
+            padding: 1.25rem 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            background: transparent;
+            margin-top: 0.75rem;
         }
 
         @media (max-width: 900px) {
@@ -944,13 +963,10 @@
         <div class="top-bar-right">
             <span data-translate="service-available"><i class="far fa-clock"></i> 24/7 Service Available</span>
             <div class="social-icons">
-                <a href="https://facebook.com/profile.php?id=100095228155017" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://x.com/vipshuttlehi" target="_blank" rel="noopener noreferrer"><i class="fab fa-x"></i></a>
-                <a href="https://instagram.com/hawaiivipblackcars/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com/in/hawaii-vip-black-cars-279b0431b/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.tiktok.com/@hawaiivipblackcars" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-                <a href="https://pinterest.com/hawaiivipblackcars/_created" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
-                <a href="https://yelp.com/biz/hawaii-vip-black-cars-urban-honolulu" target="_blank" rel="noopener noreferrer"><i class="fab fa-yelp"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -967,7 +983,7 @@
                 <li><a href="#reviews" data-translate="nav-reviews">Reviews</a></li>
                 <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
             </ul>
-            <button class="book-now-btn" onclick="location.href='#booking'" data-translate="book-now">Book Now</button>
+            <a class="book-now-btn" href="#booking" data-translate="book-now">Book Now</a>
             <button class="mobile-menu-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -1007,8 +1023,8 @@
             </div>
 
             <div class="hero-buttons">
-                <button class="hero-btn-primary" onclick="location.href='#booking'" data-translate="hero-btn-1">BOOK NOW</button>
-                <button class="hero-btn-secondary" onclick="location.href=\'#fleet\'" data-translate="hero-btn-2">VIEW FLEET</button>
+                <a class="hero-btn-primary" href="#booking" data-translate="hero-btn-1">BOOK NOW</a>
+                <a class="hero-btn-secondary" href="#fleet" data-translate="hero-btn-2">VIEW FLEET</a>
             </div>
         </div>
 
@@ -1024,10 +1040,41 @@
     <!-- Booking Section -->
     <section class="booking" id="booking">
         <div class="booking-container">
-            <div class="booking-card" onclick="location.href='#contact'">Airport Transfer</div>
-            <div class="booking-card" onclick="location.href='#contact'">Private Charter</div>
-            <div class="booking-card" onclick="location.href='#contact'">Cruise Port</div>
-            <div class="booking-card" onclick="location.href='#contact'">Point-to-Point Transfer</div>
+            <div class="service-card booking-card" onclick="location.href='#contact'">
+                <div class="service-icon">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwep-0yFb9YGpk8wt6a4R4KJwlSHeQqrAmo2IRZbnp6VnLH_UDvIPMj0hEmeOmx5Vw4jE5a0Nb62EsYdhoOXm4XjH7dH-hCRt1rAbABraZAC7SJGyyJIvhGnuEnWTpHWgrck6kKBI=s680-w680-h510-rw" alt="Airport Transfer" style="width:100%; height:220px; object-fit:cover; border-radius:8px;">
+                </div>
+                <h3 class="service-title" data-translate="service-1-title">Airport Transfer</h3>
+                <p class="service-description" data-translate="service-1-desc">Seamless airport pickup and drop-off services with professional chauffeurs ensuring timely arrivals and departures for all your travel needs.</p>
+                <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card booking-card" onclick="location.href='#contact'">
+                <div class="service-icon">
+                    <img src="https://static.wixstatic.com/media/f8ed52_39fb45f42b074715be0ab2e8d4a7ed07~mv2.jpg/v1/fill/w_640,h_732,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f8ed52_39fb45f42b074715be0ab2e8d4a7ed07~mv2.jpg" alt="Private Charter" style="width:100%; height:220px; object-fit:cover; border-radius:8px;">
+                </div>
+                <h3 class="service-title" data-translate="service-2-title">Private Charter</h3>
+                <p class="service-description" data-translate="service-2-desc">Executive transportation solutions designed for business professionals, offering discretion, reliability, and ultimate comfort for your corporate journeys.</p>
+                <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card booking-card" onclick="location.href='#contact'">
+                <div class="service-icon">
+                    <img src="https://www.theinsidecabin.com/wp-content/uploads/2024/02/pier-2-2.jpg" alt="Cruise Port" style="width:100%; height:220px; object-fit:cover; border-radius:8px;">
+                </div>
+                <h3 class="service-title">Cruise Port</h3>
+                <p class="service-description">Professional cruise port transfers with reliable pickup and drop-off right at the pier, tailored to your cruise schedule.</p>
+                <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card booking-card" onclick="location.href='#contact'">
+                <div class="service-icon">
+                    <img src="https://agalimo.com/wp-content/uploads/2022/08/How-Private-Point-to-Point-Transportation-Can-Benefit-You.jpg" alt="Point-to-Point Transfer" style="width:100%; height:220px; object-fit:cover; border-radius:8px;">
+                </div>
+                <h3 class="service-title">Point-to-Point Transfer</h3>
+                <p class="service-description">Direct, efficient point-to-point transfers with professional chauffeurs and comfortable vehicles for any distance.</p>
+                <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
     </section>
 
@@ -1269,13 +1316,10 @@
                 <h3>Hawaii VIP <span style="color: var(--primary-gold);">Black Cars</span></h3>
                 <p data-translate="footer-desc">Setting the standard for luxury ground transportation through exceptional service, unwavering professionalism, and an uncompromising commitment to excellence.</p>
                 <div class="social-icons" style="margin-top: 1.5rem;">
-                    <a href="https://facebook.com/profile.php?id=100095228155017" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/vipshuttlehi" target="_blank" rel="noopener noreferrer"><i class="fab fa-x"></i></a>
-                    <a href="https://instagram.com/hawaiivipblackcars/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/in/hawaii-vip-black-cars-279b0431b/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.tiktok.com/@hawaiivipblackcars" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://pinterest.com/hawaiivipblackcars/_created" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
-                    <a href="https://yelp.com/biz/hawaii-vip-black-cars-urban-honolulu" target="_blank" rel="noopener noreferrer"><i class="fab fa-yelp"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
 
