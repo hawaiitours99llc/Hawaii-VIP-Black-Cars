@@ -933,6 +933,36 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Chauffeurs embed */
+        .chauffeurs {
+            padding: 4rem 5%;
+            background: var(--light-gray);
+        }
+
+        .chauffeurs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .chauffeurs-iframe {
+            width: 100%;
+            height: 820px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .reviews-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 0.7rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -982,6 +1012,7 @@
                 <li><a href="#home" data-translate="nav-home">Home</a></li>
                 <li><a href="#services" data-translate="nav-services">Services</a></li>
                 <li><a href="#fleet" data-translate="nav-fleet">Fleet</a></li>
+                <li><a href="#chauffeurs">Chauffeurs</a></li>
                 <li><a href="#about" data-translate="nav-about">About</a></li>
                 <li><a href="#reviews" data-translate="nav-reviews">Reviews</a></li>
                 <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
@@ -1077,6 +1108,18 @@
                 <h3 class="service-title">Point-to-Point Transfer</h3>
                 <p class="service-description">Direct, efficient point-to-point transfers with professional chauffeurs and comfortable vehicles for any distance.</p>
                 <a href="#contact" class="service-link">Book Here <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chauffeurs Section (embedded) -->
+    <section class="chauffeurs" id="chauffeurs">
+        <div class="chauffeurs-container">
+            <h2 class="section-title">Chauffeurs</h2>
+            <p class="section-description">View our chauffeurs below. If the embedded page is blocked by the remote site, use the "Open in new tab" link.</p>
+            <a class="reviews-link" href="https://www.google.com/search?q=hawaiivipblackcars&rlz=1C1FKPE_enKH1173KH1173&oq=hawaiivipblackcars&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhBMgYIAhBFGDwyBggDEEUYPDIGCAQQRRg8MgYIBRBFGEEyBggGEEUYQdIBCDM0MTlqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8&sei=37CCaeOiMpfDkPIP7eTo6Q0#lrd=0x7c006d90101509d9:0xc20459e55ac36c77,1,,,," target="_blank" rel="noopener noreferrer">Read our Google Reviews</a>
+            <div style="margin-top:1rem;">
+                <iframe class="chauffeurs-iframe" src="https://hawaitours99.com/chauffeurs">Sorry — your browser does not support iframes. <a href="https://hawaitours99.com/chauffeurs" target="_blank" rel="noopener noreferrer">Open in new tab</a></iframe>
             </div>
         </div>
     </section>
