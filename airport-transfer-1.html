@@ -73,17 +73,105 @@
 
                     <h3 style="margin-top:1.5rem">Available Vehicle Classes</h3>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
-                        <div style="background:#f3f4f6;padding:1.5rem;border-radius:8px;min-height:200px;display:flex;align-items:center;justify-content:center;text-align:center">
-                            <h4 style="margin:0">First-Class Cadillac Escalade</h4>
+                        <!-- First-Class Cadillac Escalade -->
+                        <div style="cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease" onclick="document.getElementById('escalade-details').style.display = document.getElementById('escalade-details').style.display === 'none' ? 'block' : 'none'">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/2025_10_04_23_32_IMG_0455.JPG/" alt="First-Class Cadillac Escalade" style="width:100%;height:200px;object-fit:cover;display:block">
+                            <div style="background:#f3f4f6;padding:1.5rem;text-align:center">
+                                <h4 style="margin:0">First-Class Cadillac Escalade</h4>
+                            </div>
                         </div>
-                        <div style="background:#f3f4f6;padding:1.5rem;border-radius:8px;min-height:200px;display:flex;align-items:center;justify-content:center;text-align:center">
-                            <h4 style="margin:0">Business-Class SUV</h4>
+
+                        <!-- Business-Class SUV -->
+                        <div style="cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease" onclick="document.getElementById('suv-details').style.display = document.getElementById('suv-details').style.display === 'none' ? 'block' : 'none'">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/Untitledasfasf-b67de0a.png/" alt="Business-Class SUV" style="width:100%;height:200px;object-fit:cover;display:block">
+                            <div style="background:#f3f4f6;padding:1.5rem;text-align:center">
+                                <h4 style="margin:0">Business-Class SUV</h4>
+                            </div>
                         </div>
-                        <div style="background:#f3f4f6;padding:1.5rem;border-radius:8px;min-height:200px;display:flex;align-items:center;justify-content:center;text-align:center">
-                            <h4 style="margin:0">Luxury Sedan</h4>
+
+                        <!-- Luxury Sedan -->
+                        <div style="cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease" onclick="document.getElementById('sedan-details').style.display = document.getElementById('sedan-details').style.display === 'none' ? 'block' : 'none'">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/5291D971-37FC-4814-9DB2-059D47E08F1A.jpg/" alt="Luxury Sedan" style="width:100%;height:200px;object-fit:cover;display:block">
+                            <div style="background:#f3f4f6;padding:1.5rem;text-align:center">
+                                <h4 style="margin:0">Luxury Sedan</h4>
+                            </div>
                         </div>
-                        <div style="background:#f3f4f6;padding:1.5rem;border-radius:8px;min-height:200px;display:flex;align-items:center;justify-content:center;text-align:center">
-                            <h4 style="margin:0">Mercedes Sprinter</h4>
+
+                        <!-- Mercedes Sprinter -->
+                        <div style="cursor:pointer;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.3s ease" onclick="document.getElementById('sprinter-details').style.display = document.getElementById('sprinter-details').style.display === 'none' ? 'block' : 'none'">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/IMG_9055.webp/" alt="Mercedes Sprinter" style="width:100%;height:200px;object-fit:cover;display:block">
+                            <div style="background:#f3f4f6;padding:1.5rem;text-align:center">
+                                <h4 style="margin:0">Mercedes Sprinter</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expandable Details Sections -->
+                    <div id="escalade-details" style="display:none;margin-top:1.5rem;padding:1.5rem;background:#f9f9f9;border-radius:8px">
+                        <h4>First-Class Cadillac Escalade SUV</h4>
+                        <p>Step into the future of luxury travel with our new Cadillac Escalade SUV, the latest addition to our premium fleet. This cutting-edge model redefines sophistication with a bold design, advanced technology, and an exceptionally quiet ride.</p>
+                        <p><strong>Features:</strong></p>
+                        <ul style="margin:0.5rem 0">
+                            <li>Upgraded interiors with premium finishes</li>
+                            <li>Enhanced legroom for ultimate comfort</li>
+                            <li>Premium sound systems</li>
+                            <li>State-of-the-art safety technology</li>
+                            <li>Rated 5 stars on Google</li>
+                        </ul>
+                        <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/Untitledasfasf.png/" style="width:100%;border-radius:6px;height:150px;object-fit:cover">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/SUV%20New.jpg/" style="width:100%;border-radius:6px;height:150px;object-fit:cover">
+                        </div>
+                    </div>
+
+                    <div id="suv-details" style="display:none;margin-top:1.5rem;padding:1.5rem;background:#f9f9f9;border-radius:8px">
+                        <h4>Business-Class SUV</h4>
+                        <p>Welcome to our premium airport transfer company in Honolulu, where we proudly offer the Business-Class SUV—a symbol of timeless luxury and reliability. This model provides the perfect balance of comfort, style, and spaciousness for your transfer needs.</p>
+                        <p><strong>Features:</strong></p>
+                        <ul style="margin:0.5rem 0">
+                            <li>Plush leather seating</li>
+                            <li>Ample room for passengers and luggage</li>
+                            <li>Smooth, quiet ride</li>
+                            <li>Professional drivers with 5.0 Google rating</li>
+                            <li>Ideal for families and business travelers</li>
+                        </ul>
+                        <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/b0fa6c99-220f-480d-8919-4e35f07f6b5a-0d312e4.jpg/" style="width:100%;border-radius:6px;height:150px;object-fit:cover">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/IMG_1488-bd61547.jpg/" style="width:100%;border-radius:6px;height:150px;object-fit:cover">
+                        </div>
+                    </div>
+
+                    <div id="sedan-details" style="display:none;margin-top:1.5rem;padding:1.5rem;background:#f9f9f9;border-radius:8px">
+                        <h4>Luxury Sedan</h4>
+                        <p>Experience the convenience and comfort of our premium luxury sedan transfer and transportation service from Honolulu airport. Ideal for families, small groups, or solo travelers, our spacious and comfortable luxury sedan can accommodate up to 2 passengers and their luggage.</p>
+                        <p><strong>Features:</strong></p>
+                        <ul style="margin:0.5rem 0">
+                            <li>Spacious and comfortable interior</li>
+                            <li>Premium amenities and finishes</li>
+                            <li>Professional chauffeur service</li>
+                            <li>Stress-free and timely transfers</li>
+                            <li>Ideal for couples and solo travelers</li>
+                        </ul>
+                        <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/5291D971-37FC-4814-9DB2-059D47E08F1A.jpg/" style="width:100%;border-radius:6px;height:150px;object-fit:cover">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/IMG_6498.jpeg/" style="width:100%;border-radius:6px;height:150px;object-fit:cover">
+                        </div>
+                    </div>
+
+                    <div id="sprinter-details" style="display:none;margin-top:1.5rem;padding:1.5rem;background:#f9f9f9;border-radius:8px">
+                        <h4>Mercedes Sprinter Van</h4>
+                        <p>Enjoy the height of comfort and luxury with our private transfer service that can accommodate up to 14 passengers in our Mercedes Sprinter van. Our top-of-the-line vans provide ample space for you and your group to relax and enjoy the ride.</p>
+                        <p><strong>Features:</strong></p>
+                        <ul style="margin:0.5rem 0">
+                            <li>Spacious interior for large groups</li>
+                            <li>Leather seating for ultimate comfort</li>
+                            <li>Wooden floor with premium finishes</li>
+                            <li>Air conditioning and tinted windows</li>
+                            <li>Professional drivers and seamless service</li>
+                        </ul>
+                        <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/ea0a370d0e61e255c17e5bbe1407a222.jpg/" style="width:100%;border-radius:6px;height:150px;object-fit:cover">
+                            <img src="https://img1.wsimg.com/isteam/ip/2c76c85d-00bd-4dd6-9570-7f51bde7a6b1/11.webp/" style="width:100%;border-radius:6px;height:150px;object-fit:cover">
                         </div>
                     </div>
                 </div>
