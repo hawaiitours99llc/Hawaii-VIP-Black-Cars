@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Lim0o - Premium Luxury Transportation Services</title>
+    <title>Hawaii VIP Black Cars - Premium Luxury Transportation Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -866,6 +866,103 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Booking section */
+        .booking {
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.03), transparent);
+        }
+
+        .booking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .booking-card {
+            background: var(--white);
+            padding: 0.75rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--dark-bg);
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            min-height: 360px;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+
+        .booking-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .booking-label {
+            padding: 1.25rem 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            background: transparent;
+            margin-top: 0.75rem;
+        }
+
+        @media (max-width: 900px) {
+            .booking-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Chauffeurs embed */
+        .chauffeurs {
+            padding: 4rem 5%;
+            background: var(--light-gray);
+        }
+
+        .chauffeurs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .chauffeurs-iframe {
+            width: 100%;
+            height: 820px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .reviews-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 0.7rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -884,22 +981,25 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
-            <a href="tel:5551234567">
+            <a href="tel:+18083048521">
                 <i class="fas fa-phone"></i>
-                (555) 123-4567
+                +1 (808) 304-8521
             </a>
-            <a href="mailto:info@luxurylimo.com">
+            <a href="mailto:info@hawaiivipblackcars.com">
                 <i class="fas fa-envelope"></i>
-                info@luxurylimo.com
+                info@hawaiivipblackcars.com
             </a>
         </div>
         <div class="top-bar-right">
             <span data-translate="service-available"><i class="far fa-clock"></i> 24/7 Service Available</span>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://facebook.com/profile.php?id=100095228155017" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/vipshuttlehi" target="_blank" rel="noopener noreferrer"><i class="fab fa-x"></i></a>
+                <a href="https://instagram.com/hawaiivipblackcars/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/hawaii-vip-black-cars-279b0431b/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@hawaiivipblackcars" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                <a href="https://pinterest.com/hawaiivipblackcars/_created" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
+                <a href="https://yelp.com/biz/hawaii-vip-black-cars-urban-honolulu" target="_blank" rel="noopener noreferrer"><i class="fab fa-yelp"></i></a>
             </div>
         </div>
     </div>
@@ -907,16 +1007,17 @@
     <!-- Main Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="#" class="logo">ELITE<span>LIMO</span></a>
+            <a href="#" class="logo"><img src="file:///C:/Users/User/Desktop/Untitled%20design.png" alt="Hawaii VIP Black Cars" style="height:48px; object-fit:contain;"></a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" data-translate="nav-home">Home</a></li>
                 <li><a href="#services" data-translate="nav-services">Services</a></li>
                 <li><a href="#fleet" data-translate="nav-fleet">Fleet</a></li>
+                <li><a href="#chauffeurs">Chauffeurs</a></li>
                 <li><a href="#about" data-translate="nav-about">About</a></li>
                 <li><a href="#reviews" data-translate="nav-reviews">Reviews</a></li>
                 <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
             </ul>
-            <button class="book-now-btn" onclick="location.href='#contact'" data-translate="book-now">Book Now</button>
+            <a class="book-now-btn" href="#booking" data-translate="book-now">Book Now</a>
             <button class="mobile-menu-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -956,8 +1057,8 @@
             </div>
 
             <div class="hero-buttons">
-                <button class="hero-btn-primary" onclick="location.href=\'#contact\'" data-translate="hero-btn-1">BOOK NOW</button>
-                <button class="hero-btn-secondary" onclick="location.href=\'#fleet\'" data-translate="hero-btn-2">VIEW FLEET</button>
+                <a class="hero-btn-primary" href="#booking" data-translate="hero-btn-1">BOOK NOW</a>
+                <a class="hero-btn-secondary" href="#fleet" data-translate="hero-btn-2">VIEW FLEET</a>
             </div>
         </div>
 
@@ -967,6 +1068,59 @@
 
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="booking-container">
+            <div class="service-card booking-card" onclick="location.href='airport-transfer-1.html'">
+                <div class="service-icon">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwep-0yFb9YGpk8wt6a4R4KJwlSHeQqrAmo2IRZbnp6VnLH_UDvIPMj0hEmeOmx5Vw4jE5a0Nb62EsYdhoOXm4XjH7dH-hCRt1rAbABraZAC7SJGyyJIvhGnuEnWTpHWgrck6kKBI=s680-w680-h510-rw" alt="Airport Transfer" style="width:100%; height:220px; object-fit:cover; border-radius:8px;">
+                </div>
+                <h3 class="service-title" data-translate="service-1-title">Airport Transfer</h3>
+                <p class="service-description" data-translate="service-1-desc">Seamless airport pickup and drop-off services with professional chauffeurs ensuring timely arrivals and departures for all your travel needs.</p>
+                <a href="#contact" class="service-link">Book Here <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card booking-card" onclick="location.href='#contact'">
+                <div class="service-icon">
+                    <img src="https://static.wixstatic.com/media/f8ed52_39fb45f42b074715be0ab2e8d4a7ed07~mv2.jpg/v1/fill/w_640,h_732,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f8ed52_39fb45f42b074715be0ab2e8d4a7ed07~mv2.jpg" alt="Private Charter" style="width:100%; height:220px; object-fit:cover; border-radius:8px;">
+                </div>
+                <h3 class="service-title" data-translate="service-2-title">Private Charter</h3>
+                <p class="service-description" data-translate="service-2-desc">Executive transportation solutions designed for business professionals, offering discretion, reliability, and ultimate comfort for your corporate journeys.</p>
+                <a href="#contact" class="service-link">Book Here <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card booking-card" onclick="location.href='#contact'">
+                <div class="service-icon">
+                    <img src="https://www.theinsidecabin.com/wp-content/uploads/2024/02/pier-2-2.jpg" alt="Cruise Port" style="width:100%; height:220px; object-fit:cover; border-radius:8px;">
+                </div>
+                <h3 class="service-title">Cruise Port</h3>
+                <p class="service-description">Professional cruise port transfers with reliable pickup and drop-off right at the pier, tailored to your cruise schedule.</p>
+                <a href="#contact" class="service-link">Book Here <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card booking-card" onclick="location.href='#contact'">
+                <div class="service-icon">
+                    <img src="https://agalimo.com/wp-content/uploads/2022/08/How-Private-Point-to-Point-Transportation-Can-Benefit-You.jpg" alt="Point-to-Point Transfer" style="width:100%; height:220px; object-fit:cover; border-radius:8px;">
+                </div>
+                <h3 class="service-title">Point-to-Point Transfer</h3>
+                <p class="service-description">Direct, efficient point-to-point transfers with professional chauffeurs and comfortable vehicles for any distance.</p>
+                <a href="#contact" class="service-link">Book Here <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chauffeurs Section (embedded) -->
+    <section class="chauffeurs" id="chauffeurs">
+        <div class="chauffeurs-container">
+            <h2 class="section-title">Chauffeurs</h2>
+            <p class="section-description">View our chauffeurs below. If the embedded page is blocked by the remote site, use the "Open in new tab" link.</p>
+            <a class="reviews-link" href="https://www.google.com/search?q=hawaiivipblackcars&rlz=1C1FKPE_enKH1173KH1173&oq=hawaiivipblackcars&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhBMgYIAhBFGDwyBggDEEUYPDIGCAQQRRg8MgYIBRBFGEEyBggGEEUYQdIBCDM0MTlqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8&sei=37CCaeOiMpfDkPIP7eTo6Q0#lrd=0x7c006d90101509d9:0xc20459e55ac36c77,1,,,," target="_blank" rel="noopener noreferrer">Read our Google Reviews</a>
+            <div style="margin-top:1rem;">
+                <iframe class="chauffeurs-iframe" src="https://hawaitours99.com/chauffeurs">Sorry — your browser does not support iframes. <a href="https://hawaitours99.com/chauffeurs" target="_blank" rel="noopener noreferrer">Open in new tab</a></iframe>
+            </div>
         </div>
     </section>
 
@@ -1153,6 +1307,13 @@
             <p class="section-description" data-translate="testimonials-desc">Read firsthand experiences from our satisfied clients who've enjoyed our premium transportation services.</p>
         </div>
 
+        <div style="max-width:1200px;margin:1.5rem auto;">
+            <iframe src="https://www.google.com/maps?q=hawaiivipblackcars&output=embed" style="width:100%;height:420px;border:0;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.08);"></iframe>
+            <div style="margin-top:0.6rem;text-align:right;">
+                <a class="reviews-link" href="https://www.google.com/search?q=hawaiivipblackcars" target="_blank" rel="noopener noreferrer">Open on Google Maps / Reviews</a>
+            </div>
+        </div>
+
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="quote-icon">"</div>
@@ -1196,7 +1357,7 @@
     <section class="cta-section" id="contact">
         <div class="cta-content">
             <h2 class="cta-title" data-translate="cta-title">Ready to Experience Luxury?</h2>
-            <p class="cta-description" data-translate="cta-desc">Book your premium transportation service today and discover why discerning clients choose Elite Limo for all their travel needs. Available 24/7 for your convenience.</p>
+            <p class="cta-description" data-translate="cta-desc">Book your premium transportation service today and discover why discerning clients choose Hawaii VIP Black Cars for all their travel needs. Available 24/7 for your convenience.</p>
             <button class="cta-button" data-translate="cta-button">BOOK YOUR RIDE NOW</button>
         </div>
     </section>
@@ -1205,13 +1366,16 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>ELITE<span style="color: var(--primary-gold);">LIMO</span></h3>
+                <h3>Hawaii VIP <span style="color: var(--primary-gold);">Black Cars</span></h3>
                 <p data-translate="footer-desc">Setting the standard for luxury ground transportation through exceptional service, unwavering professionalism, and an uncompromising commitment to excellence.</p>
                 <div class="social-icons" style="margin-top: 1.5rem;">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com/profile.php?id=100095228155017" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/vipshuttlehi" target="_blank" rel="noopener noreferrer"><i class="fab fa-x"></i></a>
+                    <a href="https://instagram.com/hawaiivipblackcars/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/hawaii-vip-black-cars-279b0431b/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.tiktok.com/@hawaiivipblackcars" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://pinterest.com/hawaiivipblackcars/_created" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://yelp.com/biz/hawaii-vip-black-cars-urban-honolulu" target="_blank" rel="noopener noreferrer"><i class="fab fa-yelp"></i></a>
                 </div>
             </div>
 
@@ -1240,8 +1404,8 @@
             <div class="footer-section">
                 <h3 data-translate="footer-contact">Contact</h3>
                 <ul>
-                    <li><a href="tel:5551234567">(555) 123-4567</a></li>
-                    <li><a href="mailto:info@luxurylimo.com">info@luxurylimo.com</a></li>
+                    <li><a href="tel:+18083048521">+1 (808) 304-8521</a></li>
+                    <li><a href="mailto:info@hawaiivipblackcars.com">info@hawaiivipblackcars.com</a></li>
                     <li>24/7 Service Available</li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
@@ -1250,7 +1414,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p data-translate="footer-copyright">&copy; 2024 Elite Limo. All rights reserved. | Redefining luxury transportation.</p>
+            <p data-translate="footer-copyright">&copy; 2024 Hawaii VIP Black Cars. All rights reserved. | Redefining luxury transportation.</p>
         </div>
     </footer>
 
@@ -1311,17 +1475,17 @@
                 'fleet-title': 'Luxury Vehicles',
                 'fleet-desc': 'Our meticulously maintained fleet offers the perfect vehicle for every occasion, combining elegance, comfort, and cutting-edge technology.',
                 
-                'fleet-1-name': 'Executive Sedans',
-                'fleet-1-cap': 'Up to 3 Passengers | Premium Comfort',
+                'fleet-1-name': 'Luxury Cadillac Escalade SUV EVS',
+                'fleet-1-cap': 'Up to 5 Passengers | Spacious Elegance',
                 
-                'fleet-2-name': 'Luxury SUVs',
-                'fleet-2-cap': 'Up to 6 Passengers | Spacious Elegance',
+                'fleet-2-name': 'Executive Sedans',
+                'fleet-2-cap': 'Up to 2 Passengers | Premium Comfort',
                 
-                'fleet-3-name': 'Executive Vans',
-                'fleet-3-cap': 'Up to 14 Passengers | Group Travel',
+                'fleet-3-name': 'Business SUVs',
+                'fleet-3-cap': 'Up to 5 Passengers | Group Travel',
                 
-                'fleet-4-name': 'Luxury Coaches',
-                'fleet-4-cap': 'Up to 28 Passengers | Large Events',
+                'fleet-4-name': 'Luxury Sprinter Vans',
+                'fleet-4-cap': 'Up to 14 Passengers | Large Events',
                 
                 'fleet-5-name': 'Stretch Limousines',
                 'fleet-5-cap': 'Up to 10 Passengers | Ultimate Luxury',
@@ -1348,7 +1512,7 @@
                 
                 'feature-6-title': 'Transparent Pricing',
                 'feature-6-desc': 'Clear, upfront pricing with no hidden fees, ensuring you always know exactly what to expect.',
-                
+
                 // Testimonials
                 'testimonials-badge': 'Testimonials',
                 'testimonials-title': 'What Our Clients Say',
@@ -1368,7 +1532,7 @@
                 
                 // CTA
                 'cta-title': 'Ready to Experience Luxury?',
-                'cta-desc': 'Book your premium transportation service today and discover why discerning clients choose Elite Limo for all their travel needs. Available 24/7 for your convenience.',
+                'cta-desc': 'Book your premium transportation service today and discover why discerning clients choose Hawaii VIP Black Cars for all their travel needs. Available 24/7 for your convenience.',
                 'cta-button': 'BOOK YOUR RIDE NOW',
                 
                 // Footer
@@ -1376,7 +1540,7 @@
                 'footer-quick': 'Quick Links',
                 'footer-services': 'Services',
                 'footer-contact': 'Contact',
-                'footer-copyright': '© 2024 Elite Limo. All rights reserved. | Redefining luxury transportation.',
+                'footer-copyright': '© 2024 Hawaii VIP Black Cars. All rights reserved. | Redefining luxury transportation.',
             },
             
             ja: {
@@ -1490,7 +1654,7 @@
                 
                 // CTA
                 'cta-title': '豪華さを体験する準備はできましたか？',
-                'cta-desc': '今日プレミアム輸送サービスを予約して、なぜ目の肥えたクライアントがすべての旅行ニーズにエリートリムジンを選ぶのかを発見してください。24時間年中無休で対応しています。',
+                'cta-desc': '今日プレミアム輸送サービスを予約して、なぜ目の肥えたクライアントがすべての旅行ニーズにHawaii VIP Black Carsを選ぶのかを発見してください。24時間年中無休で対応しています。',
                 'cta-button': '今すぐ乗車を予約',
                 
                 // Footer
@@ -1498,7 +1662,7 @@
                 'footer-quick': 'クイックリンク',
                 'footer-services': 'サービス',
                 'footer-contact': 'お問い合わせ',
-                'footer-copyright': '© 2024 Elite Limo. 全著作権所有 | 高級輸送を再定義',
+                'footer-copyright': '© 2024 Hawaii VIP Black Cars. 全著作権所有 | 高級輸送を再定義',
             },
             
             es: {
@@ -1612,7 +1776,7 @@
                 
                 // CTA
                 'cta-title': '¿Listo para Experimentar el Lujo?',
-                'cta-desc': 'Reserve su servicio de transporte premium hoy y descubra por qué los clientes exigentes eligen Elite Limo para todas sus necesidades de viaje. Disponible 24/7 para su conveniencia.',
+                'cta-desc': 'Reserve su servicio de transporte premium hoy y descubra por qué los clientes exigentes eligen Hawaii VIP Black Cars para todas sus necesidades de viaje. Disponible 24/7 para su conveniencia.',
                 'cta-button': 'RESERVE SU VIAJE AHORA',
                 
                 // Footer
@@ -1620,7 +1784,7 @@
                 'footer-quick': 'Enlaces Rápidos',
                 'footer-services': 'Servicios',
                 'footer-contact': 'Contacto',
-                'footer-copyright': '© 2024 Elite Limo. Todos los derechos reservados. | Redefiniendo el transporte de lujo.',
+                'footer-copyright': '© 2024 Hawaii VIP Black Cars. Todos los derechos reservados. | Redefiniendo el transporte de lujo.',
             },
             
             zh: {
@@ -1734,7 +1898,7 @@
                 
                 // CTA
                 'cta-title': '准备好体验奢华了吗？',
-                'cta-desc': '立即预订您的高端交通服务，了解为什么挑剔的客户选择Elite Limo满足所有旅行需求。24/7全天候为您服务。',
+                'cta-desc': '立即预订您的高端交通服务，了解为什么挑剔的客户选择 Hawaii VIP Black Cars 满足所有旅行需求。24/7全天候为您服务。',
                 'cta-button': '立即预订您的行程',
                 
                 // Footer
@@ -1742,7 +1906,7 @@
                 'footer-quick': '快速链接',
                 'footer-services': '服务',
                 'footer-contact': '联系我们',
-                'footer-copyright': '© 2024 Elite Limo. 版权所有 | 重新定义豪华交通',
+                'footer-copyright': '© 2024 Hawaii VIP Black Cars. 版权所有 | 重新定义豪华交通',
             }
         };
 
